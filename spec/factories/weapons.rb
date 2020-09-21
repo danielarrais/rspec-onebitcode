@@ -1,9 +1,11 @@
+require 'ffaker'
+
 FactoryBot.define do
   factory :weapon do
-    name { "MyString" }
-    description { "MyString" }
-    power_base { 1 }
-    power_step { 1 }
-    level { 1 }
+    name { FFaker::Name.first_name }
+    description { FFaker::Lorem.paragraph }
+    power_base { FFaker::Random.rand(1000..3000) }
+    power_step { FFaker::Random.rand(100..1000) }
+    level { FFaker::Random.rand(1..999) }
   end
 end
