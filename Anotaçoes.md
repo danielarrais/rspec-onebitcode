@@ -135,8 +135,29 @@ expect { ... }.to raise_error(ErrorClass, 'message')
 ```
 
 ## Testando Models
-### Porque e quando testar models
 
-Os models são classe rubys que se conectam às tabelas do banco de dados para facilitar a manipulação delas. O teste dos models serve para garantir que a estrutura dos dados estjam corretas.
+Os models são classes rubys que se conectam às tabelas do banco de dados para facilitar a manipulação delas. O teste dos models serve para garantir que a estrutura dos dados estjam corretas.
 
+### Quando utilizar
 Nem sempre é necessários testá-los, geralmente somente quando os models tiverem validações customizadas.
+
+## Testes de requests
+
+São testes de integração (ou seja, que testam vários componentes ao mesmo tempo) que realiza uma request completa para um endpoint do seu projeto e verifica se ele está respondendo adequadamente.
+
+Exemplo:
+```ruby
+describe 'GET /home' do
+  it "has the message 'Hello World'" do
+    get home_path
+    expect(reponse.body).to include('Hello World')
+  end
+end
+```
+
+### Porque utilizar?
+1. Para garantir que seu endpoint está devolvendo o status code e a resposta esperada dele.
+1. Para garantir que a integração entre od diversos elementos (model, controller, rota etc.) necessários para a resposta do endpoint estão funcionando adequadamente juntos.
+
+### Quando utilizar
+Sempre que possível, principalmente se a aplicação trata-se de uma API.
