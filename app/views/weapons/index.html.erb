@@ -1,0 +1,24 @@
+<% @weapons.each do |weapon| %>
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Current Power</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><%= weapon.name %></td>
+      <td><%= weapon.current_power %></td>
+      <td><%= weapon.title %></td>
+      <td>
+        <%= link_to weapon_path(weapon) do %>
+          <span>Show</span>
+        <% end %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+<% end %>

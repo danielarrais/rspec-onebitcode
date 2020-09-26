@@ -161,3 +161,6 @@ end
 
 ### Quando utilizar
 Sempre que possível, principalmente se a aplicação trata-se de uma API.
+
+## Testando uma API
+
