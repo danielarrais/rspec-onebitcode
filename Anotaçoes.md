@@ -164,3 +164,8 @@ Sempre que possível, principalmente se a aplicação trata-se de uma API.
 
 ## Testando uma API
 
+API's são maneiras de conectar serviços, com elas é possível se conectar ao google para traduzir uma frase ou ao Watson da IBM para realizar um processamento de linguagem natural.
+
+## Que tipo de testes fazemos em API's?
+
+Testes de request e testes unitários.
