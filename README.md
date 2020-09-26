@@ -1,24 +1,7 @@
-# README
+## Minicurso de Testes para Ruby on Rails com RSpec
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este repositório contém os códigos que utilizei para praticar o conteúdo repassado no curso [Minicurso de Testes para Ruby on Rails com RSpec](https://onebitcode.com/course/minicurso-de-testes/) e as anotações que fiz sobre o mesmo. Cada commit feito equivale a uma aula, exceto no caso dos desafios, pois eles podem está dividos em um ou mais commits.
 
-Things you may want to cover:
+## Anotações
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Várias anotações foram feitas sobre as diversas aulas. Elas podem ser lidas [aqui](https://github.com/danielarrais/rspec_onebitcode/blob/master/Anota%C3%A7oes.md).
