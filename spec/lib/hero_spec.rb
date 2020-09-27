@@ -12,4 +12,3 @@ describe Hero do
     expect(hero.hp).to be >= 1000
   end
 end
-notas de estudo
