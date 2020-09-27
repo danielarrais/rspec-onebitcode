@@ -166,6 +166,35 @@ Sempre que possível, principalmente se a aplicação trata-se de uma API.
 
 API's são maneiras de conectar serviços, com elas é possível se conectar ao google para traduzir uma frase ou ao Watson da IBM para realizar um processamento de linguagem natural.
 
-## Que tipo de testes fazemos em API's?
+### Que tipo de testes fazemos em API's?
 
 Testes de request e testes unitários.
+
+## Melhorando os testes com let e hooks
+
+Let é uma maneira de definir métodos/variáveis nos nossos testes que só carrega o valor quando ele é utilizado, e depois do primeiro uso mantén um cache de valor durante todo o teste. Ex.: 
+
+```ruby
+describe Hero do
+  let(:hero) { Hero.new }
+  it 'has a sword' do
+    expect(hero.weapon).to eq('sword')
+  end
+end
+```
+
+Hooks são métodos que permitem a execução de códigos antes ou depois dos testes. Ex.: 
+
+```ruby
+describe Hero do
+  let(:hero) { Hero.new }
+
+  before(:each) do
+    hero.update(weapon: 'axe')
+  end
+
+  it 'has a axe' do
+    expect(hero.weapon).to eq('axe')
+  end
+end
+```
