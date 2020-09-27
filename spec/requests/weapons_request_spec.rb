@@ -40,7 +40,8 @@ RSpec.describe "Weapons", type: :request do
       weapon = create(:weapon)
       delete weapon_path(weapon)
 
-      expect(Weapon.find_by_id(weapon.id)).to be_nil
+      # expect(Weapon.find_by_id(weapon.id)).to be_nil
+      expect { weapon.reload }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 

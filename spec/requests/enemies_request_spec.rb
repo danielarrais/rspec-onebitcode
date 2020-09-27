@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Enemies", type: :request do
-
   describe "PUT /enemies" do
     context 'when enemies exists' do
       it 'returns status code 200' do
@@ -44,4 +43,32 @@ RSpec.describe "Enemies", type: :request do
       end
     end
   end
+
+  describe "DELETE /destroy" do
+    context 'when enemy exists' do
+      it 'returns status code 200' do
+        enemy = create(:enemy)
+        delete enemy_path(enemy)
+
+        expect(response).to have_http_status(204)
+      end
+
+      it 'destroy the record' do
+        enemy = create(:enemy)
+        delete enemy_path(enemy)
+
+        # expect(Enemy.find_by_id(enemy.id)).to be_nil
+        expect { enemy.reload }.to raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+
+    context 'when the enemy not exit' do
+      it 'returns status code 404' do
+        delete enemy_path(id: 0)
+
+        expect(response).to have_http_status(404)
+      end
+    end
+  end
+
 end
